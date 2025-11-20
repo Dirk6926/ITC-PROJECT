@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins";
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;         
+  padding: 10px 20px;
+  background-color: #0D0D0D; 
+  color: #F6C453;
+  border-bottom: 2px solid #C1121F; 
+}
