@@ -15,3 +15,21 @@ document.querySelectorAll('.read-more').forEach(button => {
     }
   });
 });
+const rings = document.querySelectorAll('.scroll-rings .ring');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      rings.forEach(ring => {
+        ring.style.animationPlayState = 'running'; // START animation
+      });
+      observer.disconnect(); // optional, only trigger once
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+// Observe the container, not individual rings
+const container = document.querySelector('.scroll-rings');
+observer.observe(container);
