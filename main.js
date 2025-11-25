@@ -1,35 +1,38 @@
-document.querySelectorAll('.read-more').forEach(button => {
-  button.addEventListener('click', () => {
-    const post = button.closest('.blog-post');
-    const fullContent = post.querySelector('.full-content');
-    const preview = post.querySelector('.preview');
+document.addEventListener("DOMContentLoaded", function() {
 
-    if (fullContent.style.display === 'block') {
-      fullContent.style.display = 'none';
-      preview.style.display = 'block';
-      button.textContent = 'Read More';
-    } else {
-      fullContent.style.display = 'block';
-      preview.style.display = 'none';
-      button.textContent = 'Show Less';
+  const modal = document.getElementById("blog-modal");
+  const modalImg = document.getElementById("modal-image");
+  const modalText = document.getElementById("modal-text");
+  const closeBtn = document.querySelector(".close-btn");
+
+  // All your "Read More" buttons
+  const buttons = document.querySelectorAll(".read-more");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", function() {
+
+      const post = button.closest(".blog-post");
+
+      const imgSrc = post.querySelector("img").src;
+      const fullText = post.querySelector(".full-content").innerHTML;
+
+      modalImg.src = imgSrc;
+      modalText.innerHTML = fullText;
+
+      modal.style.display = "flex";
+    });
+  });
+
+  // Close the modal when X is clicked
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close modal when clicking outside the box
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.style.display = "none";
     }
   });
-});
-const rings = document.querySelectorAll('.scroll-rings .ring');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      rings.forEach(ring => {
-        ring.style.animationPlayState = 'running'; // START animation
-      });
-      observer.disconnect(); // optional, only trigger once
-    }
-  });
-}, {
-  threshold: 0.1
 });
-
-// Observe the container, not individual rings
-const container = document.querySelector('.scroll-rings');
-observer.observe(container);

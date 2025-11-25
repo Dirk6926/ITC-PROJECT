@@ -256,7 +256,7 @@
 .bio{
   font-family: "Texturina", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: weight;
   font-style: normal;
   color: #F2D28B;
   line-height: 1.9;
@@ -511,15 +511,12 @@ animation-name: rotate-clockwise;
   from { transform: rotate(0deg); }
   to { transform: rotate(-360deg); }
 }
-
-
 .blog-container {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   justify-items: center;
-  width: 100%;
-  max-width: 1400px; 
+  width: max-content;
   margin: 0 auto;
   margin-top: 10px;
   z-index: 5;
@@ -602,12 +599,87 @@ animation-name: rotate-clockwise;
 .read-more:hover {
   background: rgba(193, 18, 31, 0.1);
 }
-.blog-post.expanded .full-content {
-  display: block;
+/* Hide full content by default */
+.full-content {
+  display: none;
 }
-.blog-post.expanded .read-more::after {
-  content: "Show Less";
+
+/* Smooth image height transition */
+.blog-post img {
+  transition: height 0.4s ease;
 }
+
+/* Button X styling */
+.read-more.expanded {
+  background: rgba(193, 18, 31, 0.1);
+  color: #C1121F;
+  border-color: #C1121F;
+}
+.read-more.expanded::after {
+  content: "✖";
+  margin-left: 0;
+  font-size: 1rem;
+}
+
+
+.read-more.expanded {
+  background: rgba(193, 18, 31, 0.1);
+  color: #C1121F;
+  border-color: #C1121F;
+}
+/* POPUP MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #1A1A1A;
+  border: 2px solid #C1121F;
+  border-radius: 14px;
+  width: 85%;
+  max-width: 900px;
+  padding: 20px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #C1121F;
+  font-weight: bold;
+}
+
+.modal-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-top: 40px;
+}
+
+.modal-scroll img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #C1121F;
+}
+
+#modal-text {
+  color: #F6C453;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  min-width: 350px;
+}
+
+
 .about-us {
   padding: 60px 20px;
   background: #1A1A1A;
