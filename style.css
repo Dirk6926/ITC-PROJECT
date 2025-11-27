@@ -679,31 +679,156 @@ animation-name: rotate-clockwise;
   min-width: 350px;
 }
 
+/*BG DESIGN SA ABT US*/
 
 .about-us {
   padding: 60px 20px;
   background: #1A1A1A;
+  background-image: url(kaamulan-crown.jpg);
+  background-size: cover;
+  background-position: center 50%;
+  background-position-y: -100px;
+  background-repeat:  no-repeat;
+  background-blend-mode: hard-light;
   text-align: center;
   font-family: "Poppins";
   color: #FFFFFF;
+  z-index: 0;
+  isolation: isolate;
+  position: relative;
 }
-.about-us h2 {
-  font-size: 2rem;
+
+
+.about-us::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    160deg,
+    red 17%, 
+    #e4b7008f, 
+    white,
+    #d7ad04c8,
+    rgb(249, 37, 37) 87%);
+  backdrop-filter: blur(100px);
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+
+.about-us header h2 {
+  font-size: 2.5rem;
+  letter-spacing: 0.2em;
+  font-family: "Caesar Dressing", system-ui;
+  font-weight: 400;
+  font-style: normal;
   margin-bottom: 10px;
-  color: #F6C453;
+  filter: brightness(1.15);
+  background: linear-gradient(
+    135deg,
+    #6f1d1b 0%,     /* deep clay red */
+    #b08900 35%,    /* ochre */
+    #f5e6c8 55%,    /* bone white */
+    #7f5539 80%     /* bark brown */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.7px rgba(95, 21, 21, 0.8);
+  text-shadow:
+    0 5px 8px rgba(241, 19, 19, 0.653),
+    0 2px 0px rgba(0, 0, 0, 0.864),
+    0 5px 10px rgb(251, 208, 52);
+
+  -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: 
+          focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both,
+          ceremonialGlow 5.5s ease-in-out infinite,
+          ceremonialBreath 6s ease-in-out infinite;;
+  cursor: default;
 }
-.about-us p {
-  color: #F6C453;
-  margin-bottom: 40px;
+
+@keyframes ceremonialGlow {
+  0% {
+    text-shadow:
+      0 2px 0 rgba(251, 209, 69, 0.8),
+      0 0 6px rgba(176, 138, 0, 0.828),
+      0 0 10px rgb(255, 206, 28);
+  }
+
+  50% {
+    text-shadow:
+      0 2px 1px rgba(255, 194, 61, 0.85),
+      0 0 18px rgba(176, 41, 0, 0.6),
+      0 0 28px rgb(255, 149, 0);
+  }
+
+  100% {
+    text-shadow:
+      0 2px 0 rgba(251, 209, 69, 0.8),
+      0 0 6px rgba(176, 138, 0, 0.828),
+      0 0 10px rgb(255, 206, 28);
+  }
+}
+
+@keyframes ceremonialBreath {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+
+.about-us header p {
+  color: #F6D98A;
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.5);
+  font-family: "Texturina", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  margin-bottom: 20px;
   line-height: 1.6;
   font-style: italic;
+  -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+
+/*animation sa header txt sa about us*/
+@-webkit-keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
 .team-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   justify-items: center;
+  margin-top: 7%;
 }
+
 .team-member {
   background: #0D0D0D;
   border-radius: 10px;
@@ -770,27 +895,76 @@ animation-name: rotate-clockwise;
   visibility: visible;
   transform: translateX(-50%) translateY(-5px);
 }
+
+/*CONTACT US PAGE!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .contact {
-  background: #0D0D0D;
   padding: 80px 20px;
   text-align: center;
   font-family: "Poppins";
-  color: #FFFFFF;
+  color: #390303;
   position: relative;
   overflow: hidden;
 }
+.contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  
+  /* image + overlay color */
+  background-image: 
+  linear-gradient(135deg, #6f1d1b 0%, #b08900 50%, #7f5539 100%),
+  url("tribal-texture.jpg");
+  background-color: #1A1A1A; /* your section background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* blend the image with the background */
+  background-blend-mode: overlay; /* or multiply / soft-light */
+  
+  /* optional blur */
+  backdrop-filter: blur(30px);
+}
+
+
+
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #6f1d1b 0 20px,
+      #b08900 20px 40px,
+      #f5e6c8 40px 60px,
+      #7f5539 60px 80px
+    );
+  backdrop-filter: blur(25px);
+  opacity: 0.8;
+}
+
+
 .contact h2 {
   font-size: 2.2rem;
-  color: #F6C453;                   
-  margin-bottom: 5px;
-  font-family: "Poppins";                 
+  color: #F6C453;
+  font-family: "Caesar Dressing", system-ui;
+  font-weight: 600;
+  font-style: normal;                
+  margin-bottom: 5px;                
 }
 .contact p {
   color: #ffffff;                     
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto 5px;
   line-height: 1.6;
-  font-style: italic;
+  font-family: "Texturina", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 .contact-container {
   display: flex;
@@ -799,6 +973,7 @@ animation-name: rotate-clockwise;
   gap: 50px;
   flex-wrap: wrap;
 }
+
 .contact-info {
   margin-top: 15px;
   flex: 1;
@@ -809,6 +984,7 @@ animation-name: rotate-clockwise;
   border-radius: 12px;
   border: 2px solid #C1121F;                          
 }
+
 .contact-info h3 {
   color: #F6C453;
   margin-bottom: 15px;
