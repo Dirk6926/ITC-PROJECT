@@ -5,8 +5,8 @@
   scroll-behavior: smooth;
   font-family: "Caesar Dressing", system-ui;
 }
-
-.header::before {
+/*HEADER*/
+.header::before { /*for the decorative bg image sa header*/
   content: "";
   position: absolute;
   inset: 0;
@@ -34,21 +34,16 @@
   border-bottom: 2px solid #C1121F;
   overflow: hidden;
 }
-.header h1{
+.header h1{ /*ktng kaamulan text/header title*/
   font-family: "Caesar Dressing", system-ui;
   letter-spacing: 2px;  
   padding: 10px;  
   font-weight: 500;
   display: inline-block;
-  transition: 
-  transform 0.3s ease, 
-  color 0.3s ease, 
-  text-shadow 0.3s ease;
 }
-.header h1:hover {
+.header h1:hover { /*animation when hovered over*/
   animation: waveHover 0.6s ease;
 }
-
 @keyframes waveHover {
   0% {
     transform: translateY(0px) rotate(0deg);
@@ -77,8 +72,6 @@
   border-radius: 50%; 
   border: 2px solid #C1121F; 
 }
-
-
 nav {
   position: fixed;
   top: 0;
@@ -86,12 +79,10 @@ nav {
   width: 100%;
   z-index: 999;
 }
-
 .nav-links {
   display: inline-block;
   gap: 20px;
 }
-
 /* Mobile hamburger button (hidden on large screens) */
 .nav-toggle {
   display: none;
@@ -102,14 +93,10 @@ nav {
   padding: 8px;
   cursor: pointer;
 }
-
-
 body {
   padding-top: 70px;
   overflow-x: hidden;
 }
-
-
 .nav a {
   color: #F6C453; 
   text-decoration: none;
@@ -120,10 +107,6 @@ body {
   font-style: normal;
   letter-spacing: 1px;
   display: inline-block; 
-  transition: 
-    transform 0.3s ease,
-    text-shadow 0.3s ease,
-    color 0.3s ease;
 }
 .nav a:hover {
   color:#fc9927;
@@ -158,7 +141,7 @@ body {
   color: #FFFFFF;
   text-align: center;
   position: relative;
-  overflow: hidden; /* prevent decorative elements from creating horizontal scroll */
+  overflow: hidden;
 }
 .home::before {
   content: "";
@@ -220,14 +203,13 @@ body {
   0% { transform: translateY(-70px) rotate(-20deg); opacity: 0; }
   100% { transform: translateY(-80px) rotate(-30deg); opacity: 1; }
 }
-
 /*HEADER AND THE OTHER TEXTS*/
 .home-content h1 {
   font-family: "Caesar Dressing", system-ui;
   letter-spacing: 6px;
   font-size: 60px;      
   font-weight: 100;
-  margin-bottom: 50px;
+  margin-bottom: -5px;
   line-height: 1.2;
   color: #F6C453; 
   text-shadow: 1px 1px 5px rgb(0, 0, 0);
@@ -247,8 +229,6 @@ body {
     text-shadow: 0 0px 0 #7a1414, 0 2px 0 #7a1414, 0 3px 0 #7a1414, 0 4px 0 #7a1414, 0 5px 0 #7a1414, 0 6px 0 #7a1414, 0 7px 0 #7a1414, 0 8px 0 #7a1414, 0 9px 0 #7a1414, 0 50px 30px rgba(0, 0, 0, 0.3);
   }
 }
-
-
 .content {
   width: 100%;
   text-align: justify;
@@ -259,7 +239,6 @@ body {
   color: #FFFFFF;
   animation: slideUp 1s ease-in forwards;
 }
-
 @keyframes slideUp{
   0%{ transform: translateY(50px); opacity: 0; }
   100%{ transform: translateY(30px); opacity: 1;}
@@ -267,7 +246,7 @@ body {
 .tagline {
   font-size: 20px;
   font-weight: 400;
-  margin-top: -40px; /* reduced overlap to avoid clipping/overflow */
+  margin-top: -40px;
   margin-bottom: 20px;
   color: #F6C453;
   letter-spacing: 2.5px;
@@ -275,7 +254,6 @@ body {
   font-style: normal;
   text-shadow: 0px 0px 15px rgb(0, 0, 0, 0.5);
 }
-
 .bio{
   font-family: "Texturina", serif;
   font-optical-sizing: auto;
@@ -288,7 +266,6 @@ body {
   letter-spacing: 0.5px;
   position: relative;
 }
-
 /*ang ktng line2 na mu gawas tunga sa header ug bio*/
 .divider {
   max-width: 2000px;
@@ -307,13 +284,11 @@ body {
   0% { width: 0; }
   100% { width: 100%; }
 }
-
 /*btns ubos sa bio*/
 .btn-group {
   margin-top: 30px;
   animation: slideUp 1s ease-in forwards;
 }
-
 .btn {
   display: inline-block;
   margin: 10px;
@@ -346,8 +321,6 @@ body {
   background-color: #C1121F;
   color: #F6C453;
 }
-
-
 /*BLOG POSTS*/
 #blog header {
   position: relative;
@@ -361,8 +334,7 @@ body {
   animation-timeline: view();
   animation-range: entry 0% cover 70%;
 }
-
-#blog header::before {
+#blog header::before { /*iyang bg*/
   content: "";
   position: absolute;
   inset: 0;
@@ -375,17 +347,13 @@ body {
   mix-blend-mode: soft-light;
   z-index: 0; 
 }
-
 @keyframes bg-pan {
   0%   { background-position: 0% center; }
   100% { background-position: 100% center; }
 }
-
 #blog {
   background-color: #0d0d0d;
-
 }
-
 @-webkit-keyframes focus-in-expand-fwd {
   0% {
     letter-spacing: -0.5em;
@@ -403,7 +371,6 @@ body {
     opacity: 1;
   }
 }
-
 @keyframes focus-in-expand-fwd {
   0% {
     letter-spacing: -0.5em;
@@ -421,7 +388,6 @@ body {
     opacity: 1;
   }
 }
-
 .blog h1 {
   font-size: 2.4rem;
   margin-bottom: 5px;
@@ -434,12 +400,12 @@ body {
   filter: brightness(1.15);
   background: linear-gradient(
     135deg,
-    #6f1d1b 0%,     /* deep clay red */
-    #b08900 35%,    /* ochre */
-    #f5e6c8 55%,    /* bone white */
-    #7f5539 80%     /* bark brown */
+    #6f1d1b 0%,     
+    #b08900 35%,    
+    #f5e6c8 55%,    
+    #7f5539 80% 
   );
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; /*pra ma visible syas bg*/
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.7px rgba(95, 21, 21, 0.8);
   text-shadow:
@@ -451,7 +417,6 @@ body {
           ceremonialBreath 6s ease-in-out infinite;;
   cursor: default;           
 }
-
 .blog p {
   color: #e8ba76;
   margin-bottom: 4px;
@@ -464,19 +429,16 @@ body {
   display: flex;
   gap: 16px;
   overflow-x: auto;      
-  scroll-snap-type: x mandatory;
   padding: 20px;
   scroll-behavior: smooth;
-  white-space: nowrap;   
   margin-top: 10px;
   z-index: 5;
 }
 .blog-container::-webkit-scrollbar {
   height: 6px;
 }
-
 .blog-container::-webkit-scrollbar-thumb {
-  background: #C1121F;
+  background: #ffd000;
   border-radius: 10px;
 }
 .blog-post {
@@ -528,7 +490,6 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 }
-
 .author a {
   color: #F6C453;       
   text-decoration: none; 
@@ -536,11 +497,6 @@ body {
   font-optical-sizing: auto;
   font-style: normal; 
 }
-
-.author a:visited {
-  color: #F6C453;        /* visited link color */
-}
-
 .author i {
   font-size: 1.1rem;
   color: #C1121F;
@@ -556,7 +512,6 @@ body {
 .date i {
   color: #C1121F;
 }
-
 .blog-content .full-content {
   display: none;
   color: #F6C453;
@@ -564,7 +519,6 @@ body {
   line-height: 1.5;
   font-size: 1rem;
 }
-
 .read-more {
   display: inline-block;
   margin-top: 15px;
@@ -579,11 +533,7 @@ body {
   font-weight: 400;
   font-style: normal;
   font-weight: 600;
-  transition: all 0.3s ease;
   font-size: 1rem;
-}
-.blog-post img {
-  transition: height 0.4s ease;
 }
 #blog-modal {
   position: fixed;
@@ -660,24 +610,23 @@ body {
   font-style: normal;
   line-height: 1.6;
 }
-
-
-
+#blog-modal-text .modal-title {
+  text-align: center;
+  color: #e63946;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
 /*GALLERY KAAMULAN*/
-
-
-/* WORK SECTION */
 .work {
   background: #310a0a;
   color: #ffc014;
   text-align: center;
   overflow-x: hidden;
 }
-
-.work .container{
+.work .container{ /*pra dli makita ang mga white spaces sa kilid sa gallery*/
   overflow-x: hidden;
 }
-
 .work h2{
   font-family: "Caesar Dressing", system-ui;
   font-weight: 400;
@@ -688,10 +637,10 @@ body {
   filter: brightness(1.15);
   background: linear-gradient(
     135deg,
-    #6f1d1b 0%,     /* deep clay red */
-    #b08900 35%,    /* ochre */
-    #f5e6c8 55%,    /* bone white */
-    #7f5539 80%     /* bark brown */
+    #6f1d1b 0%,     
+    #b08900 35%,    
+    #f5e6c8 55%,    
+    #7f5539 80%   
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -708,22 +657,18 @@ body {
           ceremonialBreath 6s ease-in-out infinite;;
   cursor: default;
 }
-
-
 .work p{
   font-family: "Courgette", cursive;
   font-weight: 400;
   font-style: normal;
 }
-
 .work-gallery {
   width: 100%;
   overflow: hidden;
   position: relative;
   padding: 20px 0;
 }
-
-.grid-track .row-1{
+.grid-track .row-1{ 
   display:grid;
   grid-auto-flow: column; 
   grid-auto-rows: 200px;                
@@ -732,7 +677,6 @@ body {
   padding-bottom: 20px;
   animation: slideGrid 60s linear infinite;
 }
-
 .grid-track .row-2{
   display:grid;
   grid-auto-flow: column; 
@@ -742,7 +686,6 @@ body {
   padding-bottom: 20px;
   animation: slideGrid-right 60s linear infinite;
 }
-
 .grid-track .row-3{
   display:grid;
   grid-auto-flow: column; 
@@ -752,34 +695,20 @@ body {
   padding-bottom: 20px;
   animation: slideGrid 60s linear infinite;
 }
-
 .grid-track img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
 }
-
 @keyframes slideGrid {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); } /* slide full width */
 }
-
 @keyframes slideGrid-right {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); } /* slide full width */
 }
-
-
-#blog-modal-text .modal-title {
-  text-align: center;
-  color: #e63946;
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-
 /*BG DESIGN SA ABT US*/
 .about-us {
   padding: 60px 20px;
@@ -791,14 +720,10 @@ body {
   background-repeat:  no-repeat;
   background-blend-mode: hard-light;
   text-align: center;
-  font-family: "Poppins";
-  color: #FFFFFF;
   z-index: 0;
   isolation: isolate;
   position: relative;
 }
-
-
 .about-us::before {
   content: "";
   position: absolute;
@@ -815,8 +740,6 @@ body {
   mix-blend-mode: overlay;
   opacity: 0.5;
 }
-
-
 .about-us header h2 {
   font-size: 2.5rem;
   letter-spacing: 0.2em;
@@ -827,10 +750,10 @@ body {
   filter: brightness(1.15);
   background: linear-gradient(
     135deg,
-    #6f1d1b 0%,     /* deep clay red */
-    #b08900 35%,    /* ochre */
-    #f5e6c8 55%,    /* bone white */
-    #7f5539 80%     /* bark brown */
+    #6f1d1b 0%,     
+    #b08900 35%,    
+    #f5e6c8 55%,    
+    #7f5539 80%   
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -847,7 +770,6 @@ body {
           ceremonialBreath 6s ease-in-out infinite;
   cursor: default;
 }
-
 @keyframes ceremonialGlow {
   0% {
     text-shadow:
@@ -870,13 +792,10 @@ body {
       0 0 10px rgb(255, 206, 28);
   }
 }
-
 @keyframes ceremonialBreath {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.04); }
 }
-
-
 .about-us header p {
   color: #F6D98A;
   text-shadow:
@@ -890,8 +809,6 @@ body {
   -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
-
 /*animation sa header txt sa about us*/
 @-webkit-keyframes focus-in-expand {
   0% {
@@ -919,7 +836,6 @@ body {
     opacity: 1;
   }
 }
-
 .team-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -927,7 +843,6 @@ body {
   justify-items: center;
   margin-top: 7%;
 }
-
 .team-member {
   background: #0D0D0D;
   border-radius: 10px;
@@ -1050,12 +965,7 @@ body {
   margin-top: 10px;
   padding-left: 20px;
 }
-
-
-
-
-/*CONTACT US PAGE!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*CONTACT US PAGE!*/
 .contact {
   padding: 30px 20px;
   text-align: center;
@@ -1068,25 +978,17 @@ body {
   position: absolute;
   inset: 0;
   z-index: -1;
-  
   /* image + overlay color */
   background-image: 
   linear-gradient(135deg, #6f1d1b 0%, #b08900 50%, #7f5539 100%),
   url("tribal-texture.jpg");
-  background-color: #1A1A1A; /* your section background */
+  background-color: #1A1A1A;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  /* blend the image with the background */
-  background-blend-mode: overlay; /* or multiply / soft-light */
-  
-  /* optional blur */
+    background-blend-mode: overlay;
   backdrop-filter: blur(30px);
 }
-
-
-
 .contact::before {
   content: "";
   position: absolute;
@@ -1103,8 +1005,6 @@ body {
   backdrop-filter: blur(25px);
   opacity: 0.8;
 }
-
-
 .contact h2 {
   font-size: 2.2rem;
   color: #F6C453;
@@ -1112,10 +1012,10 @@ body {
   filter: brightness(1.15);
   background: linear-gradient(
     135deg,
-    #6f1d1b 0%,     /* deep clay red */
-    #b08900 35%,    /* ochre */
-    #f5e6c8 55%,    /* bone white */
-    #7f5539 80%     /* bark brown */
+    #6f1d1b 0%,    
+    #b08900 35%,   
+    #f5e6c8 55%,   
+    #7f5539 80%    
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1150,7 +1050,6 @@ body {
   gap: 50px;
   flex-wrap: wrap;
 }
-
 .contact-info {
   margin-top: 15px;
   flex: 1;
@@ -1161,7 +1060,6 @@ body {
   border-radius: 12px;
   border: 2px solid #C1121F;                          
 }
-
 .contact-info h3 {
   color: #F6C453;
   margin-bottom: 15px;
@@ -1247,7 +1145,7 @@ body {
   font-family: "Texturina", serif;
   font-optical-sizing: auto;
   font-style: normal;
-  color: #FFFFFF;
+  color: white;
   font-size: 1rem;
   outline: none;
   transition: 0.3s;
@@ -1258,13 +1156,11 @@ body {
   border-color: #C1121F;
   background: #1A1A1A;
 }
-
-
 .input-box select option {
-  font-family: "Texturina", serif; /* changes options' font */
+  font-family: "Texturina", serif; 
   font-size: 1rem;
   color: #F6C453;
-  background-color: #111; /* works in some browsers */
+  background-color: #111; 
 }
 .input-box small {
   display: block;
@@ -1272,7 +1168,6 @@ body {
   color: #F6C453;
   font-family: "Texturina", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
   font-size: 0.8rem;
 }
@@ -1296,8 +1191,6 @@ body {
   color: #0D0D0D;
   transform: translateY(-3px);
 }
-
-
 /*END PAGE*/
 .footer {
   background: rgb(19, 19, 19);            
@@ -1307,7 +1200,6 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -1320,7 +1212,8 @@ body {
   color: #F6C453;
   font-family: "Germania One", system-ui;
   font-weight: 400;
-  font-style: normal;  margin-bottom: 15px;
+  font-style: normal;  
+  margin-bottom: 15px;
 }
 .footer p {
   font-size: 0.95rem;
@@ -1328,7 +1221,6 @@ body {
   color: #ffffff;
   font-family: "Texturina", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
 }
 .footer-about {
@@ -1399,7 +1291,6 @@ body {
 .footer-bottom a:hover {
   color: #C1121F;
 }
-
 /* Responsive rules: mobile-first tweaks and breakpoints */
 @media (max-width: 480px) {
   .header { padding: 8px 12px; }
@@ -1448,7 +1339,6 @@ body {
   .footer-container { flex-direction: column; align-items: flex-start; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
-
 @media (min-width: 481px) and (max-width: 768px) {
   .home { min-height: 75vh; }
   .home-content h1 { font-size: 44px; }
@@ -1457,15 +1347,13 @@ body {
   .team-container { grid-template-columns: repeat(3, 1fr); }
   .contact-container { gap: 24px; }
 }
-
 @media (min-width: 769px) and (max-width: 1024px) {
   .home-content h1 { font-size: 52px; }
   .blog-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px; white-space: normal; }
   .team-container { grid-template-columns: repeat(4, 1fr); }
 }
-
 /* Utility: make images and media scale nicely */
-img, video, picture { max-width: 100%; height: auto; display: block; }
-
+img, video, picture { max-width: 100%; height: auto; display: block; 
+}
 /* Improve accessibility: larger taps on mobile */
 .nav a, .btn, .read-more, .send-btn { touch-action: manipulation; }
